@@ -56,9 +56,13 @@ fn main() {
         "\n\n--------------------------------Statistic-----------------------------------------------"
     );
 
-    println!("Found script files: ");
+    if found_running_scripts.len() != 0 {
+        println!("Found script files: ");
 
-    found_running_scripts.iter().for_each(|x| println!("{x}"));
+        found_running_scripts.iter().for_each(|x| println!("{x}"));
+    } else {
+        println!("No scripts were found");
+    }
 
     // It is here for testing on windows - remove it
     thread::sleep(time::Duration::from_secs(100));
